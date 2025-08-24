@@ -1,2 +1,436 @@
 2025-08-24 01:32:36,235 - root - INFO -  convert_unit function took 0.0003 seconds
 2025-08-24 01:33:55,657 - root - INFO - evaluate function takes 0.0001 seconds
+2025-08-24 11:10:23,661 - root - INFO - summarize_temperaturefunction takes 0.0000 seconds
+2025-08-24 11:10:27,917 - root - INFO - knowledge base lookup function takes 0.0073 seconds
+2025-08-24 11:10:33,574 - root - INFO - evaluate function takes 0.0001 seconds
+2025-08-24 11:10:40,444 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 11:11:51,431 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 11:11:51,431 - root - INFO - Converted 2 kg -> 2000.0000 gram
+2025-08-24 11:11:55,966 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 11:11:55,967 - root - INFO - Converted 2 kg -> 2000.0000 g
+2025-08-24 11:12:12,324 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 11:12:12,324 - root - INFO - Converted 2 kg -> 2000.0000 gram
+2025-08-24 11:56:09,393 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 20, in evaluate
+    result = calculate_expression_value(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 47, in calculate_expression_value
+    average_temperature = sum_of_temperatures / len(cities)
+ZeroDivisionError: division by zero
+2025-08-24 11:57:47,084 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 20, in evaluate
+    result = calculate_expression_value(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 47, in calculate_expression_value
+    average_temperature = sum_of_temperatures / len(cities)
+ZeroDivisionError: division by zero
+2025-08-24 11:58:08,291 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 20, in evaluate
+    result = calculate_expression_value(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 47, in calculate_expression_value
+    average_temperature = sum_of_temperatures / len(cities)
+ZeroDivisionError: division by zero
+2025-08-24 11:59:11,927 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 12:06:44,828 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 12:08:36,562 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 12:09:41,022 - root - INFO - summarize_temperaturefunction takes 0.0000 seconds
+2025-08-24 12:14:51,953 - root - INFO - summarize_temperaturefunction takes 0.0000 seconds
+2025-08-24 12:16:01,553 - root - INFO - knowledge base lookup function takes 0.0002 seconds
+2025-08-24 12:18:10,186 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 12:18:10,186 - root - ERROR - Unable to convert. It needs two units to convert from one to another
+2025-08-24 12:18:12,930 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 12:18:12,930 - root - INFO - Converted 300 g -> 0.3000 kg
+2025-08-24 12:19:34,211 - root - INFO -  convert_unit function takes 0.0007 seconds
+2025-08-24 12:19:34,211 - root - INFO - Converted 300 g -> 0.3000 kg
+2025-08-24 13:20:51,627 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 28, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me 18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 15, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 33, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me 18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:21:10,028 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 28, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me 12.5'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 15, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 33, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me 12.5% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:21:34,613 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 15, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 20, in evaluate
+    result = calculate_expression_value(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 49, in calculate_expression_value
+    average_temperature = sum_of_temperatures / len(cities)
+ZeroDivisionError: division by zero
+2025-08-24 13:21:47,117 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 28, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me  18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 15, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 33, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me  18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:22:21,433 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 28, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me  18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 33, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me  18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:22:43,291 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 29, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me  18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 34, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me  18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:22:57,829 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 29, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me  18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 35, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me  18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:23:07,142 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 30, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me  18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 35, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me  18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:23:25,574 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 30, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me  18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 35, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me  18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:23:30,778 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 30, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me  18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 35, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me  18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:23:47,654 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 30, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me  18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 35, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me  18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:24:00,223 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 30, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me  18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 35, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me  18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:24:10,621 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 30, in evaluate_percent_of_expression
+    percentage = float(percentage.strip())
+ValueError: could not convert string to float: 'tell me 18'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 18, in evaluate
+    return evaluate_percent_of_expression(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 35, in evaluate_percent_of_expression
+    return eval(expression)
+  File "<string>", line 1
+    tell me 18% of 2000
+         ^
+SyntaxError: invalid syntax
+2025-08-24 13:29:19,932 - root - INFO - summarize_temperaturefunction takes 0.0000 seconds
+2025-08-24 13:31:29,646 - root - INFO - summarize_temperaturefunction takes 0.0000 seconds
+2025-08-24 13:32:01,578 - root - INFO - summarize_temperaturefunction takes 0.0000 seconds
+2025-08-24 13:32:28,422 - root - INFO - summarize_temperaturefunction takes 0.0000 seconds
+2025-08-24 13:32:42,610 - root - INFO - summarize_temperaturefunction takes 0.0000 seconds
+2025-08-24 13:32:52,773 - root - INFO - summarize_temperaturefunction takes 0.0000 seconds
+2025-08-24 13:43:19,752 - root - INFO - summarize_temperaturefunction takes 0.0000 seconds
+2025-08-24 13:43:28,898 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 13:44:48,525 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 13:44:55,205 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 13:45:37,618 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 13:45:52,031 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 13:46:19,805 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 13:46:43,412 - root - INFO - evaluate function takes 0.0001 seconds
+2025-08-24 13:48:04,329 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 13:48:05,775 - root - INFO - knowledge base lookup function takes 0.0002 seconds
+2025-08-24 13:48:30,687 - root - INFO - knowledge base lookup function takes 0.0002 seconds
+2025-08-24 13:49:11,362 - root - INFO - knowledge base lookup function takes 0.0002 seconds
+2025-08-24 13:49:24,224 - root - INFO - knowledge base lookup function takes 0.0002 seconds
+2025-08-24 13:49:57,992 - root - INFO - knowledge base lookup function takes 0.0002 seconds
+2025-08-24 13:50:43,069 - root - INFO - knowledge base lookup function takes 0.0006 seconds
+2025-08-24 13:50:45,800 - root - INFO - knowledge base lookup function takes 0.0006 seconds
+2025-08-24 13:50:51,663 - root - INFO - knowledge base lookup function takes 0.0007 seconds
+2025-08-24 13:50:54,809 - root - INFO - knowledge base lookup function takes 0.0005 seconds
+2025-08-24 13:50:55,650 - root - INFO - knowledge base lookup function takes 0.0006 seconds
+2025-08-24 13:50:56,179 - root - INFO - knowledge base lookup function takes 0.0005 seconds
+2025-08-24 13:52:04,248 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 13:53:01,327 - root - ERROR - Error while preparing answer for the question
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\agent.py", line 16, in answer
+    evaluated_result = tools.evaluate(plan["args"]["expr"])
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 21, in evaluate
+    result = calculate_expression_value(expression)
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\utility\helper.py", line 59, in calculate_expression_value
+    return eval(temp_expression_str) + "degree celsius"
+TypeError: unsupported operand type(s) for +: 'float' and 'str'
+2025-08-24 13:53:12,384 - root - INFO - evaluate function takes 0.0002 seconds
+2025-08-24 13:53:17,491 - root - INFO - evaluate function takes 0.0003 seconds
+2025-08-24 13:58:25,505 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 13:58:25,505 - root - INFO - Converted 2 kg -> 2000.0000 gram
+2025-08-24 13:58:30,440 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 13:58:30,441 - root - INFO - Converted 2 kg -> 2000.0000 gram
+2025-08-24 13:58:48,953 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 13:58:48,953 - root - INFO - Converted 2 kilogram -> 2000.0000 gram
+2025-08-24 13:59:10,666 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 13:59:10,666 - root - INFO - Converted 2 kilogram -> 2000.0000 g
+2025-08-24 13:59:31,670 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 13:59:31,671 - root - INFO - Converted 500 g -> 0.5000 kg
+2025-08-24 13:59:34,808 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 13:59:34,808 - root - ERROR - Unable to convert. It needs two units to convert from one to another
+2025-08-24 14:00:32,668 - root - INFO -  convert_unit function takes 0.0005 seconds
+2025-08-24 14:00:32,668 - root - INFO - Converted 500 meter -> 0.5000 km
+2025-08-24 14:00:48,276 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 14:00:48,276 - root - INFO - Converted 500 meter -> 0.5000 kilometer
+2025-08-24 14:01:05,109 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:01:05,109 - root - INFO - Converted 5 l -> 5000.0000 mili liter
+2025-08-24 14:01:21,802 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 14:01:21,802 - root - INFO - Converted 1 l -> 1000.0000 mili liter
+2025-08-24 14:01:39,056 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 14:01:39,056 - root - INFO - Converted 2 l -> 2000.0000 mili liter
+2025-08-24 14:02:29,863 - root - ERROR - Error while converting unit
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 98, in convert_unit
+    sum_of_numbers = sum(numbers)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2025-08-24 14:02:48,006 - root - ERROR - Error while converting unit
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 99, in convert_unit
+    sum_of_numbers = sum(numbers)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2025-08-24 14:03:10,012 - root - ERROR - Error while converting unit
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 98, in convert_unit
+    sum_of_numbers = sum(numbers)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2025-08-24 14:03:39,459 - root - ERROR - Error while converting unit
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 98, in convert_unit
+    sum_of_numbers = sum(numbers)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2025-08-24 14:03:43,410 - root - ERROR - Error while converting unit
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 98, in convert_unit
+    sum_of_numbers = sum(numbers)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2025-08-24 14:03:47,254 - root - ERROR - Error while converting unit
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 98, in convert_unit
+    sum_of_numbers = sum(numbers)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2025-08-24 14:03:52,173 - root - ERROR - Error while converting unit
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 98, in convert_unit
+    sum_of_numbers = sum(numbers)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2025-08-24 14:03:58,697 - root - ERROR - Error while converting unit
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 99, in convert_unit
+    sum_of_numbers = sum(numbers)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2025-08-24 14:04:04,442 - root - ERROR - Error while converting unit
+Traceback (most recent call last):
+  File "C:\Users\likhon\Desktop\se1-agent-debug-assignment\se1-agent-debug-assignment\agent\tools.py", line 99, in convert_unit
+    sum_of_numbers = sum(numbers)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2025-08-24 14:04:22,967 - root - INFO -  convert_unit function takes 0.0007 seconds
+2025-08-24 14:04:22,967 - root - INFO - Converted 2.0 kg -> 2000.0000 gram
+2025-08-24 14:04:28,300 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:04:28,300 - root - INFO - Converted 2.5 kg -> 2500.0000 gram
+2025-08-24 14:04:39,342 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:04:39,343 - root - INFO - Converted 2.0 kg -> 2000.0000 gram
+2025-08-24 14:04:45,218 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:04:45,218 - root - INFO - Converted 2.0 kilogram -> 2000.0000 gram
+2025-08-24 14:04:51,516 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:04:51,516 - root - INFO - Converted 2.0 kilogram -> 2000.0000 g
+2025-08-24 14:04:58,043 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:04:58,044 - root - INFO - Converted 500.0 g -> 0.5000 kg
+2025-08-24 14:05:03,609 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 14:05:03,609 - root - INFO - Converted 1.5 g -> 0.0015 kg
+2025-08-24 14:05:08,737 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 14:05:08,738 - root - INFO - Converted 1.5 g -> 0.0015 kg
+2025-08-24 14:05:12,821 - root - INFO -  convert_unit function takes 0.0005 seconds
+2025-08-24 14:05:12,821 - root - INFO - Converted 1.5 kg -> 1500.0000 g
+2025-08-24 14:05:47,390 - root - INFO -  convert_unit function takes 0.0003 seconds
+2025-08-24 14:05:47,390 - root - INFO - Converted 0.5 km -> 500.0000 meter
+2025-08-24 14:06:13,407 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:06:13,408 - root - INFO - Converted 2.0 usd -> 1.7000 eur
+2025-08-24 14:06:28,734 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:06:28,734 - root - INFO - Converted 2.0 eur -> 2.3529 usd
+2025-08-24 14:06:33,630 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:06:33,630 - root - INFO - Converted 2.5 eur -> 2.9412 usd
+2025-08-24 14:07:30,683 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:07:44,343 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:08:06,577 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:08:14,755 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:08:30,601 - root - INFO -  convert_unit function takes 0.0005 seconds
+2025-08-24 14:08:38,245 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:09:12,108 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:09:12,108 - root - ERROR - Unable to convert. It needs two units to convert from one to another
+2025-08-24 14:09:14,137 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:09:14,137 - root - ERROR - Unable to convert. It needs two units to convert from one to another
+2025-08-24 14:09:14,629 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:09:14,629 - root - ERROR - Unable to convert. It needs two units to convert from one to another
+2025-08-24 14:09:15,168 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:09:15,168 - root - ERROR - Unable to convert. It needs two units to convert from one to another
+2025-08-24 14:09:16,519 - root - INFO -  convert_unit function takes 0.0004 seconds
+2025-08-24 14:09:16,519 - root - ERROR - Unable to convert. It needs two units to convert from one to another
+2025-08-24 14:10:09,191 - root - INFO -  convert_unit function takes 0.0004 seconds

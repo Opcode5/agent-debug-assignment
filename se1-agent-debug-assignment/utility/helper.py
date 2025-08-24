@@ -1,4 +1,6 @@
 import re
+import json
+import random
 from unit_converter.converter import UnitConverter
 from utility.constants import (
     OPERATOR,
@@ -21,10 +23,10 @@ def has_unit_in_question(expression: str)-> bool:
 
 def evaluate_percent_of_expression(expression: str):
     try:
-        percentage, base_value = expression.split("% of")
+        numbers = re.findall(r'[+-]?\d+(?:\.\d+)?', expression)
 
-        percentage = float(percentage.strip())
-        base_value = float(base_value.strip())
+        percentage = float(numbers[0])
+        base_value = float(numbers[1])
 
         return (percentage/100.0)*base_value
     except Exception:
@@ -37,7 +39,7 @@ def get_operator(expression: str)->str:
     
     return ""
 
-def calculate_expression_value(expression: str)->float:
+def calculate_expression_value(expression: str)->str:
     cities = [city for city in TEMPS.keys() if city in expression]
 
     sum_of_temperatures = 0
@@ -47,11 +49,18 @@ def calculate_expression_value(expression: str)->float:
     average_temperature = sum_of_temperatures / len(cities)
 
     match = re.search(r"[-+]?\d*\.?\d+", expression)
-    num=0
+    num = 0
 
     if match:
         num = float(match.group())
 
     temp_expression_str = str(average_temperature) + get_operator(expression) + str(num)
 
-    return eval(temp_expression_str)
+    return str(eval(temp_expression_str)) + " degree celsius"
+
+def get_random_answer()->str: 
+    with open("data/random.json", "r") as file:
+        data = json.load(file)
+        random_answer = random.choice(data["answers"])
+
+        return random_answer

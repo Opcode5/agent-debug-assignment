@@ -3,11 +3,13 @@ from .llm import call_LLM
 from agent import tools
 from utility.helper import(
     get_temperature,
+    get_random_answer,
 )
 
 def answer(question: str):
     try: 
         plan = call_LLM(question)
+        print(plan)
         
         if plan and isinstance(plan, dict) and "tool" in plan:
             if plan["tool"] == "calc":
@@ -33,7 +35,7 @@ def answer(question: str):
             elif plan["tool"] == "convert": 
                 return tools.convert_unit(plan["args"]["expr"])
 
-            return "currently don't have any information on this topic"
+        return get_random_answer()
     except Exception as e:
         logging.error("Error while preparing answer for the question", exc_info=True)
 

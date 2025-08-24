@@ -7,6 +7,7 @@ from utility.helper import (
     evaluate_percent_of_expression,
     get_temperature,
     calculate_expression_value,
+    get_random_answer,
 )
 
 def evaluate(expr: str) -> float:
@@ -66,7 +67,7 @@ def kb_lookup(topics: str) -> str:
 
         for topic in topics:
             # Default value if no match found
-            answer[topic] = "Currently we don’t have any information on this topic."
+            answer[topic] = get_random_answer()
 
             for item in data.get("topics", []):
                 name = item.get("name", "").lower()
@@ -92,8 +93,8 @@ def convert_unit(expression: str):
         start = time.perf_counter()
         converter = UnitConverter()
 
-        numbers = re.findall(r"\d+", expression)
-        numbers = [int(num) for num in numbers]
+        numbers = re.findall(r'[+-]?\d+(?:\.\d+)?', expression)
+        numbers = [float(num) for num in numbers]
 
         sum_of_numbers = sum(numbers)
         value = sum_of_numbers
@@ -110,7 +111,7 @@ def convert_unit(expression: str):
 
         end = time.perf_counter()
 
-        logging.info(f" convert_unit function took {end - start:.4f} seconds")
+        logging.info(f" convert_unit function takes {end - start:.4f} seconds")
 
         if len(units)==2: 
             from_unit = units[0]

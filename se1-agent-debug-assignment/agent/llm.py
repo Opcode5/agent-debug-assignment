@@ -1,5 +1,4 @@
 import re
-import time
 from utility.constants import (
     TEMPS,
 )

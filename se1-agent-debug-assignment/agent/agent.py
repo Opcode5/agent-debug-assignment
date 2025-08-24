@@ -9,7 +9,6 @@ from utility.helper import(
 def answer(question: str):
     try: 
         plan = call_LLM(question)
-        print(plan)
         
         if plan and isinstance(plan, dict) and "tool" in plan:
             if plan["tool"] == "calc":

@@ -1,4 +1,3 @@
-# converter.py
 import logging
 
 class UnitConverter:
@@ -46,7 +45,6 @@ class UnitConverter:
         if from_unit == "celsius" or from_unit=='c':
             celsius = value
         elif from_unit == "fahrenheit" or from_unit=='f':
-            print("celsius: ", celsius)
             celsius = (value - 32) * 5 / 9
         elif from_unit == "kelvin" or from_unit=='k':
             celsius = value - 273.15
@@ -79,4 +77,5 @@ class UnitConverter:
         result = value_in_base / self._CONVERSION_FACTORS[to_unit]
 
         logging.info(f"Converted {value} {from_unit} -> {result:.4f} {to_unit}")
+
         return result
